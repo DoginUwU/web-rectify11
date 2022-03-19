@@ -12,22 +12,17 @@ const Home: React.FC = () => (
     <Presentation />
     <ImageGalery
       title="Desktop"
-      images={[
-        "https://rectify11.weebly.com/uploads/1/3/9/5/139517684/e-1_orig.png",
-        "https://rectify11.weebly.com/uploads/1/3/9/5/139517684/e-3_orig.png",
-        "https://rectify11.weebly.com/uploads/1/3/9/5/139517684/e-4_orig.png",
-        "https://rectify11.weebly.com/uploads/1/3/9/5/139517684/e-5_orig.png",
-      ]}
+      images={["assets/e-1_orig.png", "assets/e-3_orig.png", "assets/e-4_orig.png", "assets/e-5_orig.png"]}
     />
     <DarkMode />
     <NewLook />
     <ImageGalery
       title="Fluent Setup"
       images={[
-        "https://rectify11.weebly.com/uploads/1/3/9/5/139517684/screenshot-103_orig.png",
-        "https://rectify11.weebly.com/uploads/1/3/9/5/139517684/screenshot-104_orig.png",
-        "https://rectify11.weebly.com/uploads/1/3/9/5/139517684/screenshot-106_orig.png",
-        "https://rectify11.weebly.com/uploads/1/3/9/5/139517684/screenshot-109_orig.png",
+        "assets/screenshot-103_orig.png",
+        "assets/screenshot-104_orig.png",
+        "assets/screenshot-106_orig.png",
+        "assets/screenshot-109_orig.png",
       ]}
     />
     <Footer />
