@@ -9,9 +9,14 @@ const Container = styled(MuiContainer)`
   gap: 3rem;
 
   h1 {
-    color: #484848;
+    color: ${({ theme }) => theme.colors.gray[10]};
     font-weight: 400;
     font-size: 2.5rem;
+  }
+
+  p {
+    color: ${({ theme }) => theme.colors.gray[10]};
+    margin-top: -2rem;
   }
 
   & > div {
@@ -30,6 +35,14 @@ const Container = styled(MuiContainer)`
 
       &:hover {
         transform: scale(1.01);
+      }
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    & > div {
+      & > img {
+        width: 100%;
       }
     }
   }

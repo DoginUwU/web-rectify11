@@ -12,6 +12,7 @@ const Home: React.FC = () => (
     <Presentation />
     <ImageGalery
       title="Desktop"
+      description="Our dear and well-known Windows 11 desktop with a few more news."
       images={["assets/e-1_orig.png", "assets/e-3_orig.png", "assets/e-4_orig.png", "assets/e-5_orig.png"]}
     />
     <DarkMode />

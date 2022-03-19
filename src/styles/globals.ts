@@ -36,11 +36,9 @@ const GlobalStyle = createGlobalStyle`
     }
     ::-webkit-scrollbar-thumb {
         background: #0078D8;
-        border-radius: 10px;
     }
     ::-webkit-scrollbar-track {
         background: transparent;
-        border-radius: 10px;
     }
 `;
 

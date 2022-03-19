@@ -10,6 +10,12 @@ const Container = styled(MuiContainer)`
   img {
     max-width: 500px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 const Content = styled.div`
@@ -25,10 +31,24 @@ const Content = styled.div`
     line-height: 90px;
   }
   span {
-    color: #0078d8;
+    color: ${({ theme }) => theme.colors.primary.blue};
   }
   button {
     margin-top: 1rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding-right: 0;
+
+    h1 {
+      font-size: 3.5rem;
+      line-height: 60px;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+    }
   }
 `;
 

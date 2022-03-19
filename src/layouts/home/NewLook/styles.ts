@@ -9,30 +9,35 @@ const Container = styled(MuiContainer)`
   gap: 3rem;
 
   h1 {
-    color: #484848;
+    color: ${({ theme }) => theme.colors.gray[10]};
     font-weight: 400;
     font-size: 2.5rem;
   }
 
+  p {
+    color: ${({ theme }) => theme.colors.gray[10]};
+    margin-top: -2rem;
+  }
+
+  img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+
   & > div {
+    max-height: 400px;
+    overflow: hidden;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+    border-radius: 0.5rem;
 
-    & > img {
-      flex: 1 1 auto;
-      width: calc(100% * (1 / 2) - 1rem);
-      height: 700px;
-      border-radius: 0.5rem;
-      object-fit: cover;
-      transition: transform 0.3s ease-in-out;
-
-      &:hover {
-        transform: scale(1.01);
-      }
+    & > div {
+      max-height: 400px;
     }
   }
 `;

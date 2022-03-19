@@ -57,6 +57,13 @@
                 "ts": "never",
                 "tsx": "never"
             }
+        ],
+        "no-unused-vars": [
+            "off",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "[I]\\w+"
+            }
         ]
     },
     "settings": {

@@ -5,7 +5,7 @@ const Container = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0078d8;
+  background-color: ${({ theme }) => theme.colors.primary.blue};
   color: #fff;
   padding: 3rem;
 `;

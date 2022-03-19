@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container as MuiContainer } from "@mui/material";
+import { Container as MuiContainer, Drawer } from "@mui/material";
 
 interface INavLink {
   isActive?: boolean;
@@ -19,6 +19,15 @@ const Container = styled(MuiContainer)`
     height: 3rem;
     object-fit: contain;
   }
+
+  & > svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    align-items: center;
+  }
 `;
 
 const Navigation = styled.nav`
@@ -33,7 +42,7 @@ const NavLink = styled.p<INavLink>`
   font-weight: 500;
   position: relative;
   cursor: pointer;
-  color: ${({ isActive }) => (isActive ? "#0078D8" : "#000")};
+  color: ${({ isActive, theme }) => (isActive ? theme.colors.primary.blue : "#000")};
   height: 100%;
   display: flex;
   align-items: center;
@@ -47,8 +56,29 @@ const NavLink = styled.p<INavLink>`
     width: 100%;
     border-radius: 2rem;
     height: 2px;
-    background-color: #0078d8;
+    background-color: ${({ theme }) => theme.colors.primary.blue};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: fit-content;
   }
 `;
 
-export { Container, Navigation, NavLink };
+const DrawerContainer = styled(Drawer)`
+  & > .MuiPaper-root {
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    & > div {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+  }
+`;
+
+export { Container, Navigation, NavLink, DrawerContainer };

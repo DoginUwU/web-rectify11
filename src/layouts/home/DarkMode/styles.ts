@@ -37,6 +37,16 @@ const Container = styled.main`
       object-fit: cover;
     }
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    & > div {
+      flex-direction: column;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export { Container };
