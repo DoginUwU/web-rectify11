@@ -1,4 +1,5 @@
-import { Navigation, NavLink } from "./styles";
+import { Link } from "react-router-dom";
+import { NavLink } from "./styles";
 
 interface IMenuItem {
   name: string;
@@ -22,8 +23,8 @@ const MENU_ITEMS = (): IMenuItem[] => [
 
 const NavLinks = (pathname: string) =>
   MENU_ITEMS().map(({ name, path }) => (
-    <NavLink key={name} isActive={pathname === path}>
-      {name}
-    </NavLink>
+    <Link key={name} to={path}>
+      <NavLink isActive={pathname === path}>{name}</NavLink>
+    </Link>
   ));
 export { NavLinks };

@@ -36,6 +36,10 @@ const Navigation = styled.nav`
   align-items: center;
   justify-content: center;
   gap: 2rem;
+
+  & > a {
+    height: 100%;
+  }
 `;
 
 const NavLink = styled.p<INavLink>`

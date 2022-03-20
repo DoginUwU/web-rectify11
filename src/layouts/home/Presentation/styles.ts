@@ -37,6 +37,14 @@ const Content = styled.div`
     margin-top: 1rem;
   }
 
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     padding-right: 0;
 
@@ -46,8 +54,16 @@ const Content = styled.div`
       text-align: center;
     }
 
-    button {
+    button,
+    a {
       width: 100%;
+    }
+
+    .buttons {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
     }
   }
 `;

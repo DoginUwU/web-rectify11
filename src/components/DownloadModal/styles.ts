@@ -56,8 +56,12 @@ const Content = styled.div`
   gap: 1rem;
   width: 100%;
 
+  a,
   button {
     width: 100%;
+  }
+
+  button {
     padding: 1rem;
   }
 `;

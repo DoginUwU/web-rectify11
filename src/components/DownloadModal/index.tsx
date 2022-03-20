@@ -1,35 +1,53 @@
 import { Modal } from "@mui/material";
-import React from "react";
+import { useSinglePrismicDocument } from "@prismicio/react";
+import * as prismicT from "@prismicio/types";
+import React, { useEffect, useState } from "react";
+import { IDownload } from "../../@types/download";
 import { useDownloadModal } from "../../contexts/DownloadModalContext";
 import Button from "../Button";
-import { Container, Header, Content, Footer } from "./styles";
+import { convertPrismicDocument } from "./helper";
+import { Container, Content, Footer, Header } from "./styles";
+
+type PrismicPage = prismicT.PrismicDocument<{
+  file_hash: prismicT.RichTextField;
+  body: prismicT.SliceZone;
+}>;
 
 const DownloadModal: React.FC = () => {
+  const [document] = useSinglePrismicDocument<PrismicPage>("download_page");
   const { isOpen, setIsOpen } = useDownloadModal();
+  const [download, setDownload] = useState<IDownload>();
+
+  useEffect(() => {
+    if (!document) return;
+    setDownload(() => convertPrismicDocument(document));
+  }, [document]);
 
   const handleClose = () => {
     setIsOpen(false);
   };
 
   return (
-    <Modal open={isOpen} onClose={handleClose}>
+    <Modal open={!!document && !!download && isOpen} onClose={handleClose}>
       <Container>
         <Header>
           <h1>Select your download host below</h1>
           <ul>
-            <li>Name: 22000.318.CO_RELEASE_CLIPRO_RET_X64FRE_EN-US_RECTIFIED2.5.iso</li>
-            <li>Filesize: 5.70 GB</li>
-            <li>Version: 2.5</li>
+            {download?.informations.map((info) => (
+              <li key={info}>{info}</li>
+            ))}
           </ul>
         </Header>
         <Content>
-          <Button background="#0078D8">Google Drive</Button>
-          <Button background="#0078D8">Google Drive (Link 2)</Button>
-          <Button background="#0078D8">Mediafire</Button>
+          {download?.downloads.map((item) => (
+            <a key={item.link} href={item.link} target="_blank" rel="noreferrer">
+              <Button background="#0078D8">{item.name}</Button>
+            </a>
+          ))}
         </Content>
         <Footer>
           <p>SHA256 Sum:</p>
-          <div>93e8d3977d9414d7f32455af4fa38ea7a71170dc9119d2d1f8e1fba24826fae2</div>
+          <div>{download?.file_hash}</div>
         </Footer>
       </Container>
     </Modal>

@@ -4,6 +4,7 @@ import Color from "color";
 interface IContainer {
   background?: string;
   variant: "primary" | "secondary";
+  loading?: boolean;
 }
 
 const Container = styled.button<IContainer>`
@@ -15,6 +16,8 @@ const Container = styled.button<IContainer>`
   padding: 0.5rem 2rem;
   font-weight: 500;
   transition: opacity 0.2s ease-in-out;
+  opacity: ${({ loading }) => (loading ? 0.5 : 1)};
+  cursor: ${({ loading }) => (loading ? "not-allowed" : "pointer")};
 
   ${({ variant, background }) =>
     variant === "primary"

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { useTheme } from "styled-components";
+import { useLocation } from "react-router-dom";
 import windows11Logo from "../../assets/windows/11.png";
 import { useDownloadModal } from "../../contexts/DownloadModalContext";
 import useBreakpoint from "../../hooks/useBreakpoint";
@@ -13,6 +14,7 @@ const Header: React.FC = () => {
   const theme = useTheme();
   const { setIsOpen } = useDownloadModal();
   const breakpoint = useBreakpoint();
+  const location = useLocation();
   const isMobile = breakpoint <= Number(theme.breakpoints.md.replace("px", ""));
 
   const handleDownload = () => {
@@ -28,7 +30,7 @@ const Header: React.FC = () => {
       <img src={windows11Logo} alt="Site logo" />
       {!isMobile ? (
         <>
-          <Navigation>{NavLinks("/")}</Navigation>
+          <Navigation>{NavLinks(location.pathname)}</Navigation>
           <Button background="#0078D8" variant="secondary" onClick={handleDownload}>
             Download
           </Button>
@@ -37,7 +39,7 @@ const Header: React.FC = () => {
         <IoMdMenu onClick={handleToggleMenu} />
       )}
       <DrawerContainer open={isOpenMenu} onClose={handleToggleMenu}>
-        <div>{NavLinks("/")}</div>
+        <div>{NavLinks(location.pathname)}</div>
         <Button background="#0078D8" variant="secondary" onClick={handleDownload}>
           Download
         </Button>
@@ -45,3 +47,5 @@ const Header: React.FC = () => {
     </Container>
   );
 };
+
+export default Header;
