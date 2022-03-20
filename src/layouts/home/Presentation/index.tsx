@@ -1,9 +1,16 @@
+/* eslint-disable camelcase */
 import React from "react";
 import Button from "../../../components/Button";
 import { useDownloadModal } from "../../../contexts/DownloadModalContext";
 import { Container, Content } from "./styles";
 
-const Presentation: React.FC = () => {
+interface IPresentationProps {
+  title: string;
+  description?: string;
+  primary_image: string;
+}
+
+const Presentation: React.FC<IPresentationProps> = ({ title, description, primary_image }) => {
   const { setIsOpen } = useDownloadModal();
 
   const handleDownload = () => {
@@ -13,13 +20,13 @@ const Presentation: React.FC = () => {
   return (
     <Container>
       <Content>
-        <h1>
-          Everything <span>Windows 11</span> should’ve been.
-        </h1>
-        <p>
-          Rectify11 aspires to re-create what Windows 11 as an operating system should have been - fast, simple, unique
-          and consistent Windows 11 have always been quite a half-baked OS.
-        </p>
+        <div
+          dangerouslySetInnerHTML={{ __html: title }}
+          style={{
+            maxWidth: "600px",
+          }}
+        />
+        <p dangerouslySetInnerHTML={{ __html: description || "" }} />
         <div className="buttons">
           <Button background="#0078D8" onClick={handleDownload}>
             Download now
@@ -29,7 +36,7 @@ const Presentation: React.FC = () => {
           </a>
         </div>
       </Content>
-      <img src="assets/notebook.webp" alt="Notebook with Rectify11 " />
+      <img src={primary_image} alt="Notebook with Rectify11 " />
     </Container>
   );
 };

@@ -22,6 +22,7 @@
         "prettier"
     ],
     "rules": {
+        "react/no-danger": "off",
         "linebreak-style": "off",
         "import/prefer-default-export": "off",
         "react/react-in-jsx-scope": "off",

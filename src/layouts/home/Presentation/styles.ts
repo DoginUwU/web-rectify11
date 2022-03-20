@@ -26,13 +26,20 @@ const Content = styled.div`
   gap: 1rem;
   padding-right: 3rem;
 
+  div {
+    overflow-wrap: break-word;
+  }
+
   h1 {
     font-size: 4.5rem;
     line-height: 90px;
   }
-  span {
+
+  span,
+  strong {
     color: ${({ theme }) => theme.colors.primary.blue};
   }
+
   button {
     margin-top: 1rem;
   }

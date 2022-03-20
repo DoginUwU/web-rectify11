@@ -2,13 +2,20 @@ import { Box } from "@mui/material";
 import React from "react";
 import { Container } from "./styles";
 
-const DarkMode: React.FC = () => (
+interface IDarkModeProps {
+  title: string;
+  description?: string;
+  images: string[];
+}
+
+const DarkMode: React.FC<IDarkModeProps> = ({ title, description, images }) => (
   <Container>
-    <h1>Consistent dark mode</h1>
-    <p>Rectify11 has a consistent dark mode, thanks to the power of visual styles.</p>
+    <h1>{title}</h1>
+    <p>{description}</p>
     <Box>
-      <img src="assets/screenshot-453_orig.webp" alt="" />
-      <img src="assets/screenshot-455_orig.webp" alt="" />
+      {images.map((image) => (
+        <img key={image} src={image} alt="Dark desktop" />
+      ))}
     </Box>
   </Container>
 );
