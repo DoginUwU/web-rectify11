@@ -11,10 +11,10 @@ const MENU_ITEMS = (): IMenuItem[] => [
     name: "Home",
     path: "/",
   },
-  {
-    name: "Changelog",
-    path: "/changelog",
-  },
+  // {
+  //   name: "Changelog",
+  //   path: "/changelog",
+  // },
   {
     name: "Contact",
     path: "/contact",
