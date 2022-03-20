@@ -31,10 +31,16 @@ const ChangelogImprovement = styled(Box)`
   gap: 1rem;
   width: 100%;
   font-weight: 300;
+  transition: background 0.2s ease-in-out;
 
   svg {
     margin-left: 1rem;
     color: ${(props) => props.theme.colors.primary.blue};
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
