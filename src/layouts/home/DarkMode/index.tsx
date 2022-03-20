@@ -7,8 +7,8 @@ const DarkMode: React.FC = () => (
     <h1>Consistent dark mode</h1>
     <p>Rectify11 has a consistent dark mode, thanks to the power of visual styles.</p>
     <Box>
-      <img src="assets/screenshot-453_orig.png" alt="" />
-      <img src="assets/screenshot-455_orig.png" alt="" />
+      <img src="assets/screenshot-453_orig.webp" alt="" />
+      <img src="assets/screenshot-455_orig.webp" alt="" />
     </Box>
   </Container>
 );

@@ -15,7 +15,7 @@ const ChangelogCard: React.FC<IChangelogCardProps> = ({ value }) => (
       <strong>{value.date}</strong> - {value.description}
     </p>
     {value.changes.map((change) => (
-      <ChangelogImprovement>
+      <ChangelogImprovement key={change}>
         <AiOutlineCheck />
         {change}
       </ChangelogImprovement>

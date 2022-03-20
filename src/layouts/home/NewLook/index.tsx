@@ -12,8 +12,8 @@ const NewLook: React.FC = () => (
     </p>
     <Box>
       <ReactBeforeSliderComponent
-        firstImage={{ imageUrl: "assets/white.png" }}
-        secondImage={{ imageUrl: "assets/dark.png" }}
+        firstImage={{ id: "white", imageUrl: "assets/white.webp" }}
+        secondImage={{ id: "dark", imageUrl: "assets/dark.webp" }}
       />
     </Box>
   </Container>

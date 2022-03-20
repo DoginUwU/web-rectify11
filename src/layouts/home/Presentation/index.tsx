@@ -1,5 +1,4 @@
 import React from "react";
-import notebookPng from "../../../assets/windows/notebook.png";
 import Button from "../../../components/Button";
 import { useDownloadModal } from "../../../contexts/DownloadModalContext";
 import { Container, Content } from "./styles";
@@ -30,7 +29,7 @@ const Presentation: React.FC = () => {
           </a>
         </div>
       </Content>
-      <img src={notebookPng} alt="Notebook with Rectify11 " />
+      <img src="assets/notebook.webp" alt="Notebook with Rectify11 " />
     </Container>
   );
 };

@@ -7,7 +7,7 @@ const GoToTop: React.FC = () => {
   const isTop = useOffsetTop(100);
 
   return (
-    <Container isVisible={isTop} to="header" spy smooth duration={500}>
+    <Container isVisible={isTop} to="header" spy smooth duration={500} href="#">
       <AiOutlineArrowUp />
     </Container>
   );

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { useTheme } from "styled-components";
 import { useLocation } from "react-router-dom";
-import windows11Logo from "../../assets/windows/11.png";
 import { useDownloadModal } from "../../contexts/DownloadModalContext";
 import useBreakpoint from "../../hooks/useBreakpoint";
 import Button from "../Button";
@@ -27,7 +26,7 @@ const Header: React.FC = () => {
 
   return (
     <Container id="header">
-      <img src={windows11Logo} alt="Site logo" />
+      <img src="assets/11.webp" alt="Site logo" />
       {!isMobile ? (
         <>
           <Navigation>{NavLinks(location.pathname)}</Navigation>

@@ -13,17 +13,17 @@ const Home: React.FC = () => (
     <ImageGalery
       title="Desktop"
       description="Our dear and well-known Windows 11 desktop with a few more news."
-      images={["assets/e-1_orig.png", "assets/e-3_orig.png", "assets/e-4_orig.png", "assets/e-5_orig.png"]}
+      images={["assets/e-1_orig.webp", "assets/e-3_orig.webp", "assets/e-4_orig.webp", "assets/e-5_orig.webp"]}
     />
     <DarkMode />
     <NewLook />
     <ImageGalery
       title="Fluent Setup"
       images={[
-        "assets/screenshot-103_orig.png",
-        "assets/screenshot-104_orig.png",
-        "assets/screenshot-106_orig.png",
-        "assets/screenshot-109_orig.png",
+        "assets/screenshot-103_orig.webp",
+        "assets/screenshot-104_orig.webp",
+        "assets/screenshot-106_orig.webp",
+        "assets/screenshot-109_orig.webp",
       ]}
     />
     <Footer />
