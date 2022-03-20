@@ -10,14 +10,18 @@ interface IComparationProps {
   images: string[];
 }
 
-const Comparation: React.FC<IComparationProps> = ({ title, description, images }) => (
-  <Container>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    <Box>
-      <ReactBeforeSliderComponent firstImage={{ imageUrl: images[0] }} secondImage={{ imageUrl: images[1] }} />
-    </Box>
-  </Container>
-);
+const Comparation: React.FC<IComparationProps> = ({ title, description, images }) => {
+  if (images.length < 2) return null;
+
+  return (
+    <Container>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <Box>
+        <ReactBeforeSliderComponent firstImage={{ imageUrl: images[0] }} secondImage={{ imageUrl: images[1] }} />
+      </Box>
+    </Container>
+  );
+};
 
 export default Comparation;
