@@ -31,7 +31,7 @@ const Presentation: React.FC<IPresentationProps> = ({ title, description, primar
           <Button background="#0078D8" onClick={handleDownload}>
             Download now
           </Button>
-          <a href="https://discord.gg/MtDMRrgSrr" target="_blank" rel="noreferrer">
+          <a href="https://discord.gg/tYQGpMHmZr" target="_blank" rel="noreferrer">
             <Button background="#0078D8">Community</Button>
           </a>
         </div>
