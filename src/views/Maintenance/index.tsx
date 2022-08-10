@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const Maintenance: React.FC = () => {
-  return <div />;
-}
+const Maintenance: React.FC = () => <div />;
 
 export default Maintenance;
