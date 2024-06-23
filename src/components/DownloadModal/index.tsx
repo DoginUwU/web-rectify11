@@ -39,7 +39,7 @@ const DownloadModal: React.FC = () => {
           </ul>
         </Header>
         <Content>
-          {download?.downloads.map((item) => (
+          {download?.downloads?.map((item) => (
             <a key={item.link} href={item.link} target="_blank" rel="noreferrer">
               <Button background="#0078D8">{item.name}</Button>
             </a>
